@@ -7,8 +7,11 @@
   	<input type="text" id="author"/><br/><br/>
   	<p>Link:</p>
   	<input type="text" id="link"/><br/><br/>
+
   	<p>Summary</p>
   	<textarea id="summary">Add summary </textarea><br/><br/>
+  	  	<p>Rating:</p>
+  	<input type="number" id="rating" min="0" max= "5"/><br/><br/>
   	<button id="submit">Submit</button>
   	<div id="error"></div>
        
@@ -22,6 +25,7 @@ var newArticle = {title:"", author:"", link:"", summary:""};
     	newArticle.author = $('#author').val();
     	newArticle.link = $('#link').val();
     	newArticle.summary = $('#summary').val();
+    	newArticle.rating = $('#rating').val();
           
           $.ajax({
     	method: "POST",
@@ -37,3 +41,4 @@ $("#error").text(JSON.parse(response.responseText).message);
                                                                                                     
 </script>
 <% include ../partials/footer.ejs %>
+`

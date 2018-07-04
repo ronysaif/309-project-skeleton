@@ -16,6 +16,11 @@ var ArticleSchema = {
     required: 'Summary required'
 
   },
+  rating:{
+    type: Number,
+    default: '',
+    required: 'rating required'
+  },
   author: {
     type: String,
     default: '',
@@ -34,7 +39,7 @@ var ArticleSchema = {
   created: {
     type: Date,
     default: Date.now
-  }
+  },
 }
 
 var Article = mongoose.model('Article', ArticleSchema, 'articles');
